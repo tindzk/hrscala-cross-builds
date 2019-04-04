@@ -1,0 +1,6 @@
+[project]
+scalaVersion = "2.11.11"
+scalaNativeVersion = "0.3.7"
+
+[module.demo.native]
+sources = ["src/"]

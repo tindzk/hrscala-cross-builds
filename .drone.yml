@@ -1,0 +1,15 @@
+kind: pipeline
+name: default
+steps:
+  - name: build
+    image: tindzk/seed:0.1.3
+    commands:
+      - blp-server &
+
+      - cd scala-native
+      - seed bloop
+      - bloop run demo
+
+      - cd ../cross-build
+      - seed bloop
+      - bloop test demo-jvm demo-js

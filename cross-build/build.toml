@@ -1,0 +1,34 @@
+[project]
+scalaVersion      = "2.12.4-bin-typelevel-4"
+scalaJsVersion    = "0.6.26"
+scalaOrganisation = "org.typelevel"
+scalaOptions      = ["-Yliteral-types"]
+testFrameworks    = ["minitest.runner.Framework"]
+
+[module.demo]
+root      = "shared"
+sources   = ["shared/src/"]
+scalaDeps = [
+  ["tech.sparse", "trail"        , "0.2.0"  ],
+  ["tech.sparse", "pine"         , "0.1.4"  ],
+  ["io.circe"   , "circe-core"   , "0.11.1" ],
+  ["io.circe"   , "circe-generic", "0.11.1" ],
+  ["io.circe"   , "circe-parser" , "0.11.1" ]
+]
+
+[module.demo.test]
+sources    = ["shared/test/"]
+scalaDeps  = [["io.monix", "minitest", "2.2.2"]]
+
+[module.demo.jvm]
+root      = "jvm"
+sources   = ["jvm/src/"]
+scalaDeps = [
+  ["org.http4s", "http4s-dsl"         , "0.18.23"],
+  ["org.http4s", "http4s-blaze-server", "0.18.23"],
+  ["com.outr"  , "scribe-slf4j"       , "2.7.3"  ]
+]
+
+[module.demo.js]
+root    = "js"
+sources = ["js/src/"]

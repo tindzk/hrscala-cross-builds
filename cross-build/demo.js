@@ -1,0 +1,1 @@
+/tmp/build-cross-build/bloop/demo.js
