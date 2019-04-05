@@ -45,6 +45,7 @@ object Manage {
 
             case Protocol.LogInResponse(false) =>
               DOM.render { implicit ctx =>
+                errorsMsg.hide(false)
                 errorsMsg := tag.Div.set("Log in failed")
               }
           }
